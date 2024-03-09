@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prata&family=Rubik+Glitch+Pop&display=swap");
+
+body {
+  font-family: "Montserrat" sans-serif;
+  overflow-x: hidden;
+}
+
+/* PORTADA WEB */
+
+.welcome-top {
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .welcome-top {
+    text-align: unset !important;
+    width: 75%;
+    margin-top: 0px;
+  }
+}
+
+.content-banner {
+  color: black;
+  background-image: url(../assets/img/fondo.png);
+  min-height: 400px;
+  height: 100%;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  padding-top: 8rem;
+}
+
+.banner-btn {
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 10px 0px;
+  font-size: 17px;
+  background-color: black;
+  display: inline-block;
+  color: white;
+  @include transition(0.4s);
+}
+
+.banner-btn:hover {
+  color: white;
+  background-color: purple;
+}
+
+/* FIN PORTADA WEB */
+
+section {
+  background-color: white;
+  padding: 3rem 0rem 3rem;
+}
+
+/* SLIDER */
+.slider-wrap {
+  width: 90%;
+  height: auto;
+}
+
+.slider {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+.slider-inner {
+  display: flex;
+  justify-content: space-around;
+  width: 1800px;
+  display: flex;
+}
+
+.item p {
+  color: black;
+}
+
+.item-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  @include border-radius(10px);
+  @include size(250px, 250px);
+
+  img {
+    @include transition(all 0.5s);
+  }
+
+  img:hover {
+    @include transform(scale(1.1));
+  }
+}
+
+.slider {
+  overflow-x: auto;
+  overflow-y: hidden;
+  user-select: none;
+}
+
+.slider::-webkit-scrollbar {
+  @include size(5px, 8px);
+}
+
+.slider::-webkit-scrollbar-track {
+  background-color: grey;
+  outline: 1px solid gray;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background-color: black;
+  outline: 1px solid black;
+}
+
+/* FIN SLIDER */
+
+.founder {
+  filter: grayscale(100%);
+}
+.audio-div button {
+  background-color: white;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.carousel-text h1 {
+  font-family: "Rubik Glitch Pop", sans-serif;
+  font-size: 100px;
+}
+
+.carousel-text p {
+  border-color: black solid;
+  font-family: "Prata", serif;
+  font-size: 20px;
+}
+
+@media (max-width: 725px) {
+  .carousel-text h1 {
+    font-size: 80px;
+  }
+
+  .carousel-text p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 585px) {
+  .carousel-text h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 445px) {
+  .carousel-text h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 300px) {
+  .carousel-text h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 230px) {
+  .carousel-text h1 {
+    font-size: 20px;
+  }
+
+  .carousel-text p {
+    font-size: 8px;
+  }
+}
+
+.button {
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: purple;
+  transition: all 0.3s ease;
+}
+
+.button1 {
+  margin-top: 41px;
+}
+
+.button2 {
+  margin-top: 71px;
+}
