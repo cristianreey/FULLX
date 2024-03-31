@@ -22,7 +22,6 @@ body {
 
 .content-banner {
   color: black;
-  background-image: url(../assets/img/fondo.png);
   min-height: 400px;
   height: 100%;
   position: relative;
@@ -56,72 +55,143 @@ section {
 
 /* SLIDER */
 .slider-wrap {
-  width: 90%;
-  height: auto;
+  width: 100%;
+  margin: auto;
+  position: relative;
 }
 
 .slider {
-  height: 100%;
   width: 100%;
-  overflow: scroll;
+  overflow: hidden;
+  position: relative;
 }
 
 .slider-inner {
   display: flex;
-  justify-content: space-around;
-  width: 1800px;
-  display: flex;
+  transition: transform 0.5s ease;
 }
 
-.item p {
-  color: black;
+.item {
+  margin-right: 10px; /* Añade un margen derecho para separar los elementos */
 }
 
 .item-img {
+  width: 400px; /* Tamaño fijo para el contenedor de imagen */
+  height: 400px; /* Tamaño fijo para el contenedor de imagen */
+  background-color: #f2f2f2; /* Fondo gris */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  @include border-radius(10px);
-  @include size(250px, 250px);
+}
 
-  img {
-    @include transition(all 0.5s);
+.item-img img {
+  max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+  max-height: 100%; /* Ajusta el tamaño máximo de la imagen */
+  border-radius: 8px; /* Añade bordes redondeados */
+}
+
+/* Estilos para los botones de navegación */
+.slider-prev,
+.slider-next {
+  background-color: black; /* Color del botón */
+  color: #ffffff; /* Color del texto */
+  padding: 10px; /* Ajusta el padding */
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(55%);
+  cursor: pointer;
+  font-size: 30px; /* Tamaño de la flecha */
+  opacity: 0.5;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: 0.3s ease; /* Agregamos una transición para suavizar el efecto */
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+  color: rgb(72, 1, 72);
+  opacity: 1;
+}
+
+.slider-prev {
+  left: 0;
+}
+
+.slider-next {
+  right: 0;
+}
+
+p,
+li {
+  font-family: "Prata", serif;
+  color: black;
+  padding-left: 5px;
+}
+
+.precio {
+  color: #ff0000c2;
+}
+
+.titulo {
+  padding-top: 10px;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+@media (min-width: 835px) {
+  .item {
+    width: calc(
+      100% / 2
+    ); /* Cuando el ancho de la pantalla sea mayor o igual a 440px, mostrar dos elementos por fila */
   }
-
-  img:hover {
-    @include transform(scale(1.1));
+}
+@media screen and (min-width: 1230px) {
+  .item {
+    width: calc(
+      100% / 3
+    ); /* Cuando el ancho de la pantalla sea mayor o igual a 768px, mostrar tres elementos por fila */
+  }
+}
+@media (max-width: 450px) {
+  .item-img {
+    width: 300px;
+    height: 300px;
+  }
+  .slider-prev,
+  .slider-next {
+    font-size: 25px;
   }
 }
 
-.slider {
-  overflow-x: auto;
-  overflow-y: hidden;
-  user-select: none;
+@media (max-width: 355px) {
+  .item-img {
+    width: 200px;
+    height: 200px;
+  }
+  .slider-prev,
+  .slider-next {
+    font-size: 10px;
+  }
 }
 
-.slider::-webkit-scrollbar {
-  @include size(5px, 8px);
+@media (max-width: 768px) {
+  .slider-prev,
+  .slider-next {
+    font-size: 25px;
+  }
 }
-
-.slider::-webkit-scrollbar-track {
-  background-color: grey;
-  outline: 1px solid gray;
-}
-
-.slider::-webkit-scrollbar-thumb {
-  background-color: black;
-  outline: 1px solid black;
+@media (min-width: 1640px) {
+  .btn-mujer {
+    display: none;
+  }
 }
 
 /* FIN SLIDER */
+.eslogan {
+  color: white;
+}
 
-.founder {
-  filter: grayscale(100%);
-}
-.audio-div button {
-  background-color: white;
-}
 .overlay {
   position: absolute;
   top: 0;
@@ -206,4 +276,136 @@ section {
 
 .button2 {
   margin-top: 71px;
+}
+
+.contenedorSuperiorPortada img {
+  width: 100%;
+  height: 400px;
+}
+
+.tituloPaginasCamisetas {
+  font-family: "Prata", serif;
+}
+
+.linea {
+  border: none;
+  height: 3px;
+  background-color: black;
+  margin: 20px 0;
+}
+
+.bg-light-gray {
+  background-color: #ebeaeac2; /* Cambia el color de fondo según sea necesario */
+}
+
+//PAGINA CAMISETAS
+.slider-camisetas {
+  width: 50%;
+  background-color: #f1f1f1;
+  margin-top: 50px;
+}
+
+.informacion-camisetas {
+  margin-top: 50px;
+}
+
+/* Estilos para la información de la camiseta */
+.camiseta-info {
+  padding: 20px;
+}
+
+.camiseta-info h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "Prata", serif;
+}
+
+.camiseta-info .descripcion {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.camiseta-info .tallas {
+  margin-bottom: 20px;
+}
+
+.camiseta-info label {
+  font-size: 16px;
+}
+
+.camiseta-info select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.camiseta-info button {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.camiseta-info button:hover {
+  background-color: purple;
+}
+
+.carousel-item img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #000000; /* Cambia este color al que desees */
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+}
+
+@media (max-width: 338px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    height: 30px;
+    width: 30px;
+  }
+}
+/* Estilos para el campo de cantidad */
+.cantidad {
+  margin-bottom: 20px; /* Espacio entre el selector de talla y el campo de cantidad */
+  display: flex;
+  flex-direction: column;
+}
+
+.cantidad label {
+  font-size: 16px;
+}
+
+.cantidad input[type="number"] {
+  width: 100px; /* Ancho del campo de entrada */
+  padding: 8px; /* Espaciado interno */
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.cantidad input[type="number"]:focus {
+  outline: none; /* Eliminar el contorno al enfocar */
+  border-color: #007bff; /* Color del borde al enfocar */
 }

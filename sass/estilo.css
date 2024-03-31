@@ -20,7 +20,6 @@ body {
 }
 .content-banner {
   color: black;
-  background-image: url(../assets/img/fondo.png);
   min-height: 400px;
   height: 100%;
   position: relative;
@@ -57,81 +56,134 @@ section {
 
 /* SLIDER */
 .slider-wrap {
-  width: 90%;
-  height: auto;
+  width: 100%;
+  margin: auto;
+  position: relative;
 }
 
 .slider {
-  height: 100%;
   width: 100%;
-  overflow: scroll;
+  overflow: hidden;
+  position: relative;
 }
 
 .slider-inner {
   display: flex;
-  justify-content: space-around;
-  width: 1800px;
-  display: flex;
+  transition: transform 0.5s ease;
 }
 
-.item p {
-  color: black;
+.item {
+  margin-right: 10px; /* Añade un margen derecho para separar los elementos */
 }
 
 .item-img {
+  width: 400px; /* Tamaño fijo para el contenedor de imagen */
+  height: 400px; /* Tamaño fijo para el contenedor de imagen */
+  background-color: #f2f2f2; /* Fondo gris */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  width: 250px;
-  height: 250px;
 }
+
 .item-img img {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.item-img img:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+  max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+  max-height: 100%; /* Ajusta el tamaño máximo de la imagen */
+  border-radius: 8px; /* Añade bordes redondeados */
 }
 
-.slider {
-  overflow-x: auto;
-  overflow-y: hidden;
-  user-select: none;
+/* Estilos para los botones de navegación */
+.slider-prev,
+.slider-next {
+  background-color: black; /* Color del botón */
+  color: #ffffff; /* Color del texto */
+  padding: 10px; /* Ajusta el padding */
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(55%);
+  cursor: pointer;
+  font-size: 30px; /* Tamaño de la flecha */
+  opacity: 0.5;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: 0.3s ease; /* Agregamos una transición para suavizar el efecto */
 }
 
-.slider::-webkit-scrollbar {
-  width: 5px;
-  height: 8px;
+.slider-prev:hover,
+.slider-next:hover {
+  color: rgb(72, 1, 72);
+  opacity: 1;
 }
 
-.slider::-webkit-scrollbar-track {
-  background-color: grey;
-  outline: 1px solid gray;
+.slider-prev {
+  left: 0;
 }
 
-.slider::-webkit-scrollbar-thumb {
-  background-color: black;
-  outline: 1px solid black;
+.slider-next {
+  right: 0;
 }
 
+p,
+li {
+  font-family: "Prata", serif;
+  color: black;
+  padding-left: 5px;
+}
+
+.precio {
+  color: rgba(255, 0, 0, 0.7607843137);
+}
+
+.titulo {
+  padding-top: 10px;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+@media (min-width: 835px) {
+  .item {
+    width: 50%; /* Cuando el ancho de la pantalla sea mayor o igual a 440px, mostrar dos elementos por fila */
+  }
+}
+@media screen and (min-width: 1230px) {
+  .item {
+    width: 33.3333333333%; /* Cuando el ancho de la pantalla sea mayor o igual a 768px, mostrar tres elementos por fila */
+  }
+}
+@media (max-width: 450px) {
+  .item-img {
+    width: 300px;
+    height: 300px;
+  }
+  .slider-prev,
+  .slider-next {
+    font-size: 25px;
+  }
+}
+@media (max-width: 355px) {
+  .item-img {
+    width: 200px;
+    height: 200px;
+  }
+  .slider-prev,
+  .slider-next {
+    font-size: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .slider-prev,
+  .slider-next {
+    font-size: 25px;
+  }
+}
+@media (min-width: 1640px) {
+  .btn-mujer {
+    display: none;
+  }
+}
 /* FIN SLIDER */
-.founder {
-  filter: grayscale(100%);
-}
-
-.audio-div button {
-  background-color: white;
+.eslogan {
+  color: white;
 }
 
 .overlay {
@@ -213,6 +265,138 @@ section {
   margin-top: 71px;
 }
 
+.contenedorSuperiorPortada img {
+  width: 100%;
+  height: 400px;
+}
+
+.tituloPaginasCamisetas {
+  font-family: "Prata", serif;
+}
+
+.linea {
+  border: none;
+  height: 3px;
+  background-color: black;
+  margin: 20px 0;
+}
+
+.bg-light-gray {
+  background-color: rgba(235, 234, 234, 0.7607843137); /* Cambia el color de fondo según sea necesario */
+}
+
+.slider-camisetas {
+  width: 50%;
+  background-color: #f1f1f1;
+  margin-top: 50px;
+}
+
+.informacion-camisetas {
+  margin-top: 50px;
+}
+
+/* Estilos para la información de la camiseta */
+.camiseta-info {
+  padding: 20px;
+}
+
+.camiseta-info h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "Prata", serif;
+}
+
+.camiseta-info .descripcion {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.camiseta-info .tallas {
+  margin-bottom: 20px;
+}
+
+.camiseta-info label {
+  font-size: 16px;
+}
+
+.camiseta-info select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.camiseta-info button {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.camiseta-info button:hover {
+  background-color: purple;
+}
+
+.carousel-item img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #000000; /* Cambia este color al que desees */
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+}
+
+@media (max-width: 338px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    height: 30px;
+    width: 30px;
+  }
+}
+/* Estilos para el campo de cantidad */
+.cantidad {
+  margin-bottom: 20px; /* Espacio entre el selector de talla y el campo de cantidad */
+  display: flex;
+  flex-direction: column;
+}
+
+.cantidad label {
+  font-size: 16px;
+}
+
+.cantidad input[type=number] {
+  width: 100px; /* Ancho del campo de entrada */
+  padding: 8px; /* Espaciado interno */
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.cantidad input[type=number]:focus {
+  outline: none; /* Eliminar el contorno al enfocar */
+  border-color: #007bff; /* Color del borde al enfocar */
+}
+
 header .header-inner {
   position: absolute;
   top: 0;
@@ -238,6 +422,85 @@ header .barra-vertical {
   width: 5px;
   background-color: #333;
   border-left: 2px solid #fff;
+}
+header #search-menu-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+header #search-menu {
+  padding: 20px;
+  color: #fff;
+}
+header #search-menu-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+header #search-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+header #search-menu input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+header #search-menu button {
+  width: 80%;
+  padding: 10px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+header #search-menu button:hover {
+  background-color: purple;
+}
+header #close-search-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+header #item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header #item-list li {
+  padding: 5px 0;
+}
+header #item-list a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+}
+header #item-list a:hover {
+  color: purple;
+}
+header .highlight {
+  font-weight: bold;
 }
 header .nav-item .nav-link:hover,
 header .right-menu *:hover,
@@ -279,6 +542,9 @@ header .navbar-scroll .logo {
   }
 }
 @media (max-width: 991.5px) {
+  header .barra-vertical {
+    display: none;
+  }
   header .right-menu {
     order: 2;
   }
@@ -307,141 +573,14 @@ header .navbar-scroll .logo {
   }
 }
 
-.formularioVenta {
-  background-color: #e8d6ff;
-  padding: 30px 0px;
-  /* color para los span */
-  /* margen arriba y abajo para los p */
-}
-.formularioVenta input:hover,
-.formularioVenta textarea:hover {
-  background-color: #f2f2f2;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-.formularioVenta input[type=submit]:hover {
-  background-color: black;
-  color: white;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-}
-.formularioVenta span {
-  color: red;
-}
-.formularioVenta p {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
 .col-md-6 div p:first-child {
   color: gray;
 }
 
-.redes-sociales > * {
-  background-color: #000000;
-  margin-right: 5px;
-  clip-path: circle(40% at 50% 50%);
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border: 10px solid #000000;
-  color: rgb(255, 255, 255);
+.redes a {
+  margin-right: 10px;
 }
 
-/* atributos para el contenedor principal */
-.formulario {
-  width: 100%;
-  background-color: #e8d6ff;
-  padding: 0px 45px;
-  font-family: "Alata";
-  margin: 0 auto;
-}
-
-/* color específico para la clase parrafo */
-.parrafo {
-  color: gray;
-}
-
-/* modificamos un poco la clase bootstrap de los inputs */
-.form-control {
-  margin-top: 5px;
-  box-shadow: inset 0 0 3px 0px #888;
-  border: 1px solid black;
-}
-
-/* textarea que no se pueda modificar el tamaño */
-textarea {
-  resize: none;
-}
-
-/* atributos para el input enviar */
-input[type=submit] {
-  margin: 20px 0px;
-  font-size: 25px;
-  box-shadow: none;
-  background-color: white;
-}
-
-.boletin {
-  font-family: "Alata";
-}
-.boletin input[type=text] {
-  background-color: rgb(244, 244, 244);
-  border: 2px solid rgb(233, 233, 233);
-  box-shadow: none;
-  line-height: 2.5;
-}
-.boletin input[type=submit] {
-  background-color: rgb(255, 255, 255);
-  border: 2px solid rgb(0, 0, 0);
-  box-shadow: none;
-  border-radius: 0px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  font-size: 17px;
-  line-height: 2.5;
-}
-.boletin form div {
-  padding: 10px 10px;
-}
-.boletin input[type=submit]:hover {
-  background-color: #e8d6ff;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input#newsletter:hover {
-  box-shadow: 0px 1px 4px 1px black;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input#newsletter:focus {
-  box-shadow: 0px 1px 4px 1px black;
-}
-
-.inscribir {
-  border-left: 2px solid rgb(205, 205, 205);
-}
-
-@media (max-width: 1200px) {
-  .inscribir {
-    border-top: 2px solid rgb(205, 205, 205);
-    border-left: none;
-  }
-}
 footer {
   background-color: black;
   color: white;
@@ -457,6 +596,16 @@ footer a {
 }
 footer a:hover {
   color: purple;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 footer div:first-child div:nth-child(3),
 footer div:first-child div:nth-child(4) {
