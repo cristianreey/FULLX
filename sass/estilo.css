@@ -461,8 +461,7 @@ header .barra-vertical {
 }
 
 #search-menu #item-list {
-  max-height: calc(100vh - 90px);
-
+  max-height: calc(100vh - 5.625em);
   padding: 0;
   list-style: none;
   margin: 10px 0;
