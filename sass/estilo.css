@@ -282,7 +282,12 @@ li {
 }
 
 .bg-light-gray {
-  background-color: rgba(235, 234, 234, 0.7607843137); /* Cambia el color de fondo según sea necesario */
+  background-color: rgba(
+    235,
+    234,
+    234,
+    0.7607843137
+  ); /* Cambia el color de fondo según sea necesario */
 }
 
 .slider-camisetas {
@@ -381,7 +386,7 @@ li {
   font-size: 16px;
 }
 
-.cantidad input[type=number] {
+.cantidad input[type="number"] {
   width: 100px; /* Ancho del campo de entrada */
   padding: 8px; /* Espaciado interno */
   font-size: 16px;
@@ -392,7 +397,7 @@ li {
   -webkit-appearance: none;
 }
 
-.cantidad input[type=number]:focus {
+.cantidad input[type="number"]:focus {
   outline: none; /* Eliminar el contorno al enfocar */
   border-color: #007bff; /* Color del borde al enfocar */
 }
@@ -423,7 +428,7 @@ header .barra-vertical {
   background-color: #333;
   border-left: 2px solid #fff;
 }
-header #search-menu-container {
+#search-menu-container {
   display: none;
   position: fixed;
   top: 0;
@@ -433,21 +438,8 @@ header #search-menu-container {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 999;
 }
-header #search-menu {
-  padding: 20px;
-  color: #fff;
-}
-header #search-menu-container {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 999;
-}
-header #search-menu {
+
+#search-menu {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -457,13 +449,30 @@ header #search-menu {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  max-height: 80%;
+  overflow-y: auto;
 }
-header #search-menu input {
+
+#search-menu input {
   width: 80%;
   padding: 10px;
   margin-bottom: 10px;
   box-sizing: border-box;
 }
+
+#search-menu #item-list {
+  max-height: calc(100vh - 90px);
+
+  padding: 0;
+  list-style: none;
+  margin: 10px 0;
+}
+
+#search-menu #item-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
 header #search-menu button {
   width: 80%;
   padding: 10px;
@@ -616,4 +625,4 @@ footer div:first-child div:nth-child(4) {
     font-size: 10px;
     text-align: center;
   }
-}/*# sourceMappingURL=estilo.css.map */
+} /*# sourceMappingURL=estilo.css.map */
